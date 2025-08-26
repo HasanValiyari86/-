@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>برنامه بدنسازی شاگرد</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Vazirmatn',sans-serif}
+body{background:radial-gradient(circle at top left,#111,#000);color:#fff;display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:20px;}
+.card{background:rgba(20,20,20,0.85);backdrop-filter:blur(12px);padding:25px;border-radius:20px;box-shadow:0 0 30px rgba(0,0,0,0.8);width:100%;max-width:1200px;animation:fadeIn 1s ease forwards;overflow-x:auto;position:relative}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+h2{text-align:center;margin-bottom:20px;color:#ff4444}
+label{display:block;margin:10px 0 5px;font-weight:600}
+input,button{width:100%;padding:10px;border:none;border-radius:10px;margin-bottom:15px;font-size:16px}
+input{background:#1a1a1a;color:#fff}
+button{background:#ff4444;color:#fff;cursor:pointer;transition:0.3s}
+button:hover{background:#ff2222}
+table{width:100%;border-collapse:collapse;margin-top:20px;min-width:600px}
+th,td{border:1px solid #444;padding:8px;text-align:center;vertical-align:top}
+th{background:#222}
+.profile{margin-top:20px;text-align:center;padding:10px;border-radius:10px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);}
+.hidden{display:none;}
+@media(max-width:700px){table{min-width:100%;overflow-x:auto;display:block}}
+</style>
+</head>
+<body>
+
+<div class="card" id="loginCard">
+<h2>ورود شاگرد</h2>
+<label>ایمیل</label>
+<input type="email" id="email">
+<label>رمز عبور</label>
+<input type="password" id="password">
+<label>نام و نام خانوادگی</label>
+<input type="text" id="fullname">
+<button onclick="login()">ورود</button>
+</div>
+
+<div class="card hidden" id="planSection">
+<h2>برنامه جامع ۳ روز در هفته</h2>
+<table>
+<thead>
+<tr><th>روز هفته</th><th>حرکات</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>شنبه</td>
+<td>
+<b>سینه :</b><br>
+پرس سینه هالتر ۱۰×۴<br>
+پرس بالا سینه دمبل ۱۰×۳<br>
+پرس پایین سینه دستگاه یا هالتر ۱۰×۳<br>
+قفسه دمبل تخت (فلای) ۱۰×۳<br>
+کراس‌اور سیم‌کش ۱۵×۲<br><br>
+<b>جلو بازو (۱۰ × ۳ ست):</b><br>
+جلو بازو هالتر<br>
+جلو بازو دمبل تناوبی<br>
+جلو بازو تمرکزی<br>
+جلو بازو چکشی (Hammer Curl)<br><br>
+<b>ساعد (۱۵ حرکت × ۳ ست):</b><br>
+ساعد هالتر از جلو (Wrist Curl)<br>
+ساعد هالتر از پشت (Reverse Curl)
+</td>
+</tr>
+<tr>
+<td>سه‌شنبه</td>
+<td>
+<b>چهارسر و سرینی (۱۲ حرکت × ۴ ست):</b><br>
+اسکوات هالتر<br>
+پرس پا دستگاه<br>
+لانج دمبل<br>
+جلو پا دستگاه<br><br>
+<b>پشت پا و همسترینگ (۱۰ حرکت × ۳ ست):</b><br>
+پشت پا دستگاه خوابیده<br>
+ددلیفت رومانیایی<br>
+گودمورنینگ (Good Morning) با هالتر سبک<br><br>
+<b>ساق (۱۰ حرکت × ۳ ست):</b><br>
+ساق ایستاده دستگاه<br>
+ساق نشسته دمبل روی پا<br><br>
+<b>شکم (۱۰ حرکت × ۳ ست):</b><br>
+کرانچ دستگاه<br>
+زیرشکم آویزان<br>
+پلانک
+</td>
+</tr>
+<tr>
+<td>پنج شنبه</td>
+<td>
+<b>پشت + پشت بازو + سرشانه + شراگ</b><br>
+<b>پشت (۱۰ حرکت × ۴ ست):</b><br>
+بارفیکس یا لت‌پول‌دان<br>
+پارو دمبل تک‌دست<br>
+پارو هالتر خم<br>
+تی‌بار دستگاه<br>
+ددلیفت سبک<br><br>
+<b>پشت بازو (۱۰ حرکت × ۳ ست):</b><br>
+پشت بازو سیم‌کش طناب<br>
+دیپ (پشت بازو)<br>
+پشت بازو دمبل بالای سر تک‌دست<br><br>
+<b>سرشانه (۱۰ حرکت × ۳ ست):</b><br>
+پرس سرشانه دمبل<br>
+نشر جانب دمبل<br>
+نشر خم دمبل (Rear Delt)<br>
+آرنولد پرس<br><br>
+<b>شراگ (۱۰ حرکت × ۳ ست):</b><br>
+شراگ دمبل
+</td>
+</tr>
+</tbody>
+</table>
+
+<div class="profile hidden" id="profile">آقای حسن ولی یاری خوش آمدید</div>
+
+</div>
+
+<script>
+function login(){
+ const email = document.getElementById('email').value.trim();
+ const pass = document.getElementById('password').value.trim();
+ const name = document.getElementById('fullname').value.trim();
+ if(email === 'hv13868897@gmail.com' && pass === 'hv13868897@gmail.com'){
+  document.getElementById('loginCard').classList.add('hidden');
+  document.getElementById('planSection').classList.remove('hidden');
+  document.getElementById('profile').classList.remove('hidden');
+  document.getElementById('profile').innerText = 'آقای حسن ولی یاری خوش آمدید';
+ } else {
+  alert('ایمیل یا رمز عبور اشتباه است');
+ }
+}
+</script>
+
+</body>
+</html>
